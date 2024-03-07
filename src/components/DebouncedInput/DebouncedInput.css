@@ -1,0 +1,9 @@
+.input-table {
+  margin: 30px;
+  background-color: #f4f4f5;
+  border: 2px solid #e2e3e5;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  min-width: 300px;
+}
