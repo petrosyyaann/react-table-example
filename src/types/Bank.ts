@@ -1,5 +1,5 @@
 export interface IBank {
-  сode: number;
+  code: number;
   integrationCode: number;
   name: string;
   branchName: string;
