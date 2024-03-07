@@ -28,8 +28,9 @@ th {
   padding: 10px 15px;
 }
 
+select,
 button {
-  margin: 30px;
+  margin: 20px;
   background-color: #f4f4f5;
   border: 2px solid #e2e3e5;
   border-radius: 10px;
@@ -47,4 +48,11 @@ button {
 
 .input-div {
   padding: 0px 5px;
+}
+
+.container {
+  height: 70vh;
+  overflow: scroll;
+  padding: 5px;
+  border: 1px solid #e2e3e5;
 }
