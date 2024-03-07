@@ -19,6 +19,7 @@ thead {
 td {
   padding: 15px;
   border-right: 1px solid #e2e3e5;
+  cursor: pointer;
 }
 
 th {
@@ -27,6 +28,23 @@ th {
   padding: 10px 15px;
 }
 
+button {
+  margin: 30px;
+  background-color: #f4f4f5;
+  border: 2px solid #e2e3e5;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
 .td-even {
   background-color: #eceef3;
+}
+
+.td-first {
+  padding-left: 0px;
+}
+
+.input-div {
+  padding: 0px 5px;
 }

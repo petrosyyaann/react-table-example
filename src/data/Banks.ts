@@ -2,7 +2,7 @@ import { IBank } from "types/Bank";
 
 export const banks: IBank[] = [
   {
-    сode: 34220,
+    code: 34220,
     integrationCode: 34220,
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
@@ -11,7 +11,7 @@ export const banks: IBank[] = [
     branchNumber: "3184",
   },
   {
-    сode: 34215,
+    code: 34215,
     integrationCode: 34215,
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
@@ -20,7 +20,7 @@ export const banks: IBank[] = [
     branchNumber: "1732",
   },
   {
-    сode: 34220,
+    code: 34220,
     integrationCode: 34220,
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
@@ -29,7 +29,7 @@ export const banks: IBank[] = [
     branchNumber: "3184",
   },
   {
-    сode: 34215,
+    code: 34215,
     integrationCode: 34215,
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
@@ -38,7 +38,7 @@ export const banks: IBank[] = [
     branchNumber: "1732",
   },
   {
-    сode: 34220,
+    code: 34220,
     integrationCode: 34220,
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
