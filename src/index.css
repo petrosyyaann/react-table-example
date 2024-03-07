@@ -1,0 +1,32 @@
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+table {
+  border: 1px solid #e2e3e5;
+  border-spacing: 0;
+}
+
+th {
+  padding: 20px 10px;
+}
+
+thead {
+  background-color: #f4f4f5;
+}
+
+td {
+  padding: 15px;
+  border-right: 1px solid #e2e3e5;
+}
+
+th {
+  border-bottom: 1px solid #e2e3e5;
+  border-right: 1px solid #e2e3e5;
+  padding: 10px 15px;
+}
+
+.td-even {
+  background-color: #eceef3;
+}
