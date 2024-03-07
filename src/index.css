@@ -56,3 +56,8 @@ button {
   padding: 5px;
   border: 1px solid #e2e3e5;
 }
+
+.div-checkbox {
+  display: flex;
+  align-items: center;
+}

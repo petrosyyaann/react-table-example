@@ -32,7 +32,32 @@ export function App() {
   const columns = useMemo<ColumnDef<IBank, any>[]>(
     () => [
       columnHelper.accessor("code", {
-        header: "Code",
+        header: () => (
+          <>
+            <input
+              type="checkbox"
+              onClick={() =>
+                selectRows.length ===
+                table.getPrePaginationRowModel().rows.length + 1
+                  ? setselectRows([])
+                  : setselectRows(
+                      Array.from(
+                        {
+                          length:
+                            table.getPrePaginationRowModel().rows.length + 1,
+                        },
+                        (_, index) => index
+                      )
+                    )
+              }
+              checked={
+                selectRows.length ===
+                table.getPrePaginationRowModel().rows.length + 1
+              }
+            />
+            <p>Code</p>
+          </>
+        ),
         cell: (info) => info.getValue(),
       }),
       columnHelper.accessor("integrationCode", {
@@ -60,6 +85,7 @@ export function App() {
         cell: (info) => info.renderValue(),
       }),
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [columnHelper]
   );
 
@@ -106,17 +132,29 @@ export function App() {
                         : "",
                       onClick: header.column.getToggleSortingHandler(),
                     }}
+                    style={{
+                      paddingLeft: header.column.id === "code" ? "5px" : "",
+                    }}
                   >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                    {{
-                      asc: " 🔼",
-                      desc: " 🔽",
-                    }[header.column.getIsSorted() as string] ?? " ↕️"}
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                      {{
+                        asc: " 🔼",
+                        desc: " 🔽",
+                      }[header.column.getIsSorted() as string] ?? " ↕️"}
+                    </div>
                   </th>
                 ))}
               </tr>
@@ -141,12 +179,7 @@ export function App() {
                     }}
                   >
                     {cell.column.id === "code" ? (
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
+                      <div className="div-checkbox">
                         <input
                           type="checkbox"
                           checked={selectRows.includes(row.index)}
