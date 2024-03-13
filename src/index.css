@@ -38,7 +38,7 @@ button {
   cursor: pointer;
 }
 
-.td-even {
+tr:nth-child(2n) {
   background-color: #eceef3;
 }
 

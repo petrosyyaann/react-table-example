@@ -1,8 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import {
-  ColumnDef,
   ColumnFiltersState,
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFacetedMinMaxValues,
@@ -16,8 +14,8 @@ import {
 
 import './index.css'
 import { banks } from './data/Banks'
-import { IBank } from 'types/Bank'
 import { DebouncedInput } from './components/DebouncedInput/DebouncedInput'
+import { useColumns } from './components/Columns/useColumns'
 
 export function App() {
   const [data] = useState(() => [...banks])
@@ -26,68 +24,7 @@ export function App() {
   const [globalFilter, setGlobalFilter] = useState('')
   const [selectRows, setselectRows] = useState<number[]>([])
 
-  const columnHelper = createColumnHelper<IBank>()
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const columns = useMemo<ColumnDef<IBank, any>[]>(
-    () => [
-      columnHelper.accessor('code', {
-        header: () => (
-          <>
-            <input
-              type="checkbox"
-              onClick={() =>
-                selectRows.length ===
-                table.getPrePaginationRowModel().rows.length + 1
-                  ? setselectRows([])
-                  : setselectRows(
-                      Array.from(
-                        {
-                          length:
-                            table.getPrePaginationRowModel().rows.length + 1,
-                        },
-                        (_, index) => index
-                      )
-                    )
-              }
-              checked={
-                selectRows.length ===
-                table.getPrePaginationRowModel().rows.length + 1
-              }
-            />
-            <p>Code</p>
-          </>
-        ),
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('integrationCode', {
-        header: 'Интеграционный код',
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor('name', {
-        header: 'Name',
-        cell: (info) => info.renderValue(),
-      }),
-      columnHelper.accessor('branchName', {
-        header: 'Название филиала',
-        cell: (info) => info.renderValue(),
-      }),
-      columnHelper.accessor('alternativeBranchBame', {
-        header: 'Альтернативное наименование филиала',
-        cell: (info) => info.renderValue(),
-      }),
-      columnHelper.accessor('branchTypeFromR12', {
-        header: 'Тип филиала из R12',
-        cell: (info) => info.renderValue(),
-      }),
-      columnHelper.accessor('branchNumber', {
-        header: 'Номер филиала',
-        cell: (info) => info.renderValue(),
-      }),
-    ],
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [columnHelper]
-  )
+  const columns = useColumns(selectRows, setselectRows)
 
   const table = useReactTable({
     data,
@@ -150,10 +87,13 @@ export function App() {
                             header.column.columnDef.header,
                             header.getContext()
                           )}
-                      {{
-                        asc: ' 🔼',
-                        desc: ' 🔽',
-                      }[header.column.getIsSorted() as string] ?? ' ↕️'}
+
+                      {(header.column.getCanSort() &&
+                        {
+                          asc: ' 🔼',
+                          desc: ' 🔽',
+                        }[header.column.getIsSorted() as string]) ??
+                        ' ↕️'}
                     </div>
                   </th>
                 ))}
@@ -166,7 +106,6 @@ export function App() {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className={Number(row.id) % 2 ? 'td-even' : ''}
                     style={{
                       paddingLeft: cell.column.id === 'code' ? '5px' : '',
                     }}
@@ -178,19 +117,12 @@ export function App() {
                         : setselectRows((prev) => [...prev, row.index])
                     }}
                   >
-                    {cell.column.id === 'code' ? (
-                      <div className="div-checkbox">
-                        <input
-                          type="checkbox"
-                          checked={selectRows.includes(row.index)}
-                        />
-                        <div className="input-div">
-                          {flexRender(
-                            cell.column.columnDef.cell,
-                            cell.getContext()
-                          )}
-                        </div>
-                      </div>
+                    {cell.column.id === 'chekboxes' ? (
+                      <input
+                        readOnly
+                        type="checkbox"
+                        checked={selectRows.includes(row.index)}
+                      />
                     ) : (
                       flexRender(cell.column.columnDef.cell, cell.getContext())
                     )}
