@@ -1,4 +1,4 @@
-import { IBank } from "types/Bank";
+import { IBank } from 'types/Bank'
 
 export const banks: IBank[] = [
   {
@@ -7,8 +7,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -16,8 +16,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -25,8 +25,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -34,8 +34,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -43,8 +43,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34220,
@@ -52,8 +52,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -61,8 +61,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -70,8 +70,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -79,8 +79,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -88,8 +88,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь2"',
     branchName: 'КБ "Континенталь2"',
     alternativeBranchBame: 'КБ "Континенталь2"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34220,
@@ -97,8 +97,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -106,8 +106,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -115,8 +115,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -124,8 +124,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -133,8 +133,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34220,
@@ -142,8 +142,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -151,8 +151,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -160,8 +160,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -169,8 +169,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -178,8 +178,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34220,
@@ -187,8 +187,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь3"',
     branchName: 'КБ "Континенталь3"',
     alternativeBranchBame: 'КБ "Континенталь3"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -196,8 +196,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -205,8 +205,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -214,8 +214,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -223,8 +223,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34220,
@@ -232,8 +232,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -241,8 +241,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -250,8 +250,8 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь"',
     branchName: 'КБ "Континенталь"',
     alternativeBranchBame: 'КБ "Континенталь"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
   {
     code: 34215,
@@ -259,8 +259,8 @@ export const banks: IBank[] = [
     name: 'АО "ИК Банк"',
     branchName: 'АО "ИК Банк"',
     alternativeBranchBame: 'АО "ИК Банк"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "1732",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '1732',
   },
   {
     code: 34220,
@@ -268,7 +268,7 @@ export const banks: IBank[] = [
     name: 'КБ "Континенталь4"',
     branchName: 'КБ "Континенталь4"',
     alternativeBranchBame: 'КБ "Континенталь4"',
-    branchTypeFromR12: "OTHER",
-    branchNumber: "3184",
+    branchTypeFromR12: 'OTHER',
+    branchNumber: '3184',
   },
-];
+]

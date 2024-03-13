@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -12,26 +12,26 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
+} from '@tanstack/react-table'
 
-import "./index.css";
-import { banks } from "./data/Banks";
-import { IBank } from "types/Bank";
-import { DebouncedInput } from "./components/DebouncedInput/DebouncedInput";
+import './index.css'
+import { banks } from './data/Banks'
+import { IBank } from 'types/Bank'
+import { DebouncedInput } from './components/DebouncedInput/DebouncedInput'
 
 export function App() {
-  const [data] = useState(() => [...banks]);
+  const [data] = useState(() => [...banks])
 
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [selectRows, setselectRows] = useState<number[]>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [globalFilter, setGlobalFilter] = useState('')
+  const [selectRows, setselectRows] = useState<number[]>([])
 
-  const columnHelper = createColumnHelper<IBank>();
+  const columnHelper = createColumnHelper<IBank>()
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const columns = useMemo<ColumnDef<IBank, any>[]>(
     () => [
-      columnHelper.accessor("code", {
+      columnHelper.accessor('code', {
         header: () => (
           <>
             <input
@@ -60,34 +60,34 @@ export function App() {
         ),
         cell: (info) => info.getValue(),
       }),
-      columnHelper.accessor("integrationCode", {
-        header: "Интеграционный код",
+      columnHelper.accessor('integrationCode', {
+        header: 'Интеграционный код',
         cell: (info) => info.getValue(),
       }),
-      columnHelper.accessor("name", {
-        header: "Name",
+      columnHelper.accessor('name', {
+        header: 'Name',
         cell: (info) => info.renderValue(),
       }),
-      columnHelper.accessor("branchName", {
-        header: "Название филиала",
+      columnHelper.accessor('branchName', {
+        header: 'Название филиала',
         cell: (info) => info.renderValue(),
       }),
-      columnHelper.accessor("alternativeBranchBame", {
-        header: "Альтернативное наименование филиала",
+      columnHelper.accessor('alternativeBranchBame', {
+        header: 'Альтернативное наименование филиала',
         cell: (info) => info.renderValue(),
       }),
-      columnHelper.accessor("branchTypeFromR12", {
-        header: "Тип филиала из R12",
+      columnHelper.accessor('branchTypeFromR12', {
+        header: 'Тип филиала из R12',
         cell: (info) => info.renderValue(),
       }),
-      columnHelper.accessor("branchNumber", {
-        header: "Номер филиала",
+      columnHelper.accessor('branchNumber', {
+        header: 'Номер филиала',
         cell: (info) => info.renderValue(),
       }),
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [columnHelper]
-  );
+  )
 
   const table = useReactTable({
     data,
@@ -108,12 +108,12 @@ export function App() {
     debugTable: true,
     debugHeaders: true,
     debugColumns: false,
-  });
+  })
 
   return (
     <div>
       <DebouncedInput
-        value={globalFilter ?? ""}
+        value={globalFilter ?? ''}
         onChange={(value) => setGlobalFilter(String(value))}
         placeholder="Поиск по всей таблице..."
       />
@@ -128,20 +128,20 @@ export function App() {
                     key={header.id}
                     {...{
                       className: header.column.getCanSort()
-                        ? "cursor-pointer select-none"
-                        : "",
+                        ? 'cursor-pointer select-none'
+                        : '',
                       onClick: header.column.getToggleSortingHandler(),
                     }}
                     style={{
-                      paddingLeft: header.column.id === "code" ? "5px" : "",
+                      paddingLeft: header.column.id === 'code' ? '5px' : '',
                     }}
                   >
                     <div
                       style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: "5px",
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        gap: '5px',
                       }}
                     >
                       {header.isPlaceholder
@@ -151,9 +151,9 @@ export function App() {
                             header.getContext()
                           )}
                       {{
-                        asc: " 🔼",
-                        desc: " 🔽",
-                      }[header.column.getIsSorted() as string] ?? " ↕️"}
+                        asc: ' 🔼',
+                        desc: ' 🔽',
+                      }[header.column.getIsSorted() as string] ?? ' ↕️'}
                     </div>
                   </th>
                 ))}
@@ -166,19 +166,19 @@ export function App() {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className={Number(row.id) % 2 ? "td-even" : ""}
+                    className={Number(row.id) % 2 ? 'td-even' : ''}
                     style={{
-                      paddingLeft: cell.column.id === "code" ? "5px" : "",
+                      paddingLeft: cell.column.id === 'code' ? '5px' : '',
                     }}
                     onClick={() => {
                       selectRows.includes(row.index)
                         ? setselectRows((prev) =>
                             prev.filter((value) => value !== row.index)
                           )
-                        : setselectRows((prev) => [...prev, row.index]);
+                        : setselectRows((prev) => [...prev, row.index])
                     }}
                   >
-                    {cell.column.id === "code" ? (
+                    {cell.column.id === 'code' ? (
                       <div className="div-checkbox">
                         <input
                           type="checkbox"
@@ -205,18 +205,18 @@ export function App() {
         onClick={() => table.previousPage()}
         disabled={!table.getCanPreviousPage()}
       >
-        {"<"}
+        {'<'}
       </button>
       <button
         onClick={() => table.nextPage()}
         disabled={!table.getCanNextPage()}
       >
-        {">"}
+        {'>'}
       </button>
       <select
         value={table.getState().pagination.pageSize}
         onChange={(e) => {
-          table.setPageSize(Number(e.target.value));
+          table.setPageSize(Number(e.target.value))
         }}
       >
         {Array.from(
@@ -239,5 +239,5 @@ export function App() {
       </span>
       <button onClick={() => alert(selectRows)}>Выбранные строки</button>
     </div>
-  );
+  )
 }
