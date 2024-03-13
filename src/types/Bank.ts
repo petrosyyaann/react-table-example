@@ -1,5 +1,4 @@
 export interface IBank {
-  chekboxes: string
   code: number
   integrationCode: number
   name: string

@@ -10,7 +10,8 @@ export const useColumns = (
 
   const columns = useMemo<ColumnDef<IBank, any>[]>(
     () => [
-      columnHelper.accessor('chekboxes', {
+      columnHelper.display({
+        id: 'chekboxes',
         header: ({ table }) => (
           <input
             type="checkbox"
