@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   ColumnFiltersState,
-  flexRender,
   getCoreRowModel,
   getFacetedMinMaxValues,
   getFacetedRowModel,
@@ -13,9 +12,13 @@ import {
 } from '@tanstack/react-table'
 
 import './index.css'
+
 import { banks } from './data/Banks'
+
 import { DebouncedInput } from './components/DebouncedInput/DebouncedInput'
 import { useColumns } from './components/Columns/useColumns'
+import { TableHead } from './components/TableHead/TableHead'
+import { TableBody } from './components/TableBody/TableBody'
 
 export function App() {
   const [data] = useState(() => [...banks])
@@ -57,80 +60,12 @@ export function App() {
       <p> Всего {table.getPrePaginationRowModel().rows.length}</p>
       <div className="container">
         <table>
-          <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th
-                    key={header.id}
-                    {...{
-                      className: header.column.getCanSort()
-                        ? 'cursor-pointer select-none'
-                        : '',
-                      onClick: header.column.getToggleSortingHandler(),
-                    }}
-                    style={{
-                      paddingLeft: header.column.id === 'code' ? '5px' : '',
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        gap: '5px',
-                      }}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-
-                      {(header.column.getCanSort() &&
-                        {
-                          asc: ' 🔼',
-                          desc: ' 🔽',
-                        }[header.column.getIsSorted() as string]) ??
-                        ' ↕️'}
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
-          <tbody>
-            {table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td
-                    key={cell.id}
-                    style={{
-                      paddingLeft: cell.column.id === 'code' ? '5px' : '',
-                    }}
-                    onClick={() => {
-                      selectRows.includes(row.index)
-                        ? setselectRows((prev) =>
-                            prev.filter((value) => value !== row.index)
-                          )
-                        : setselectRows((prev) => [...prev, row.index])
-                    }}
-                  >
-                    {cell.column.id === 'chekboxes' ? (
-                      <input
-                        readOnly
-                        type="checkbox"
-                        checked={selectRows.includes(row.index)}
-                      />
-                    ) : (
-                      flexRender(cell.column.columnDef.cell, cell.getContext())
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
+          <TableHead {...table} />
+          <TableBody
+            table={table}
+            selectRows={selectRows}
+            setselectRows={setselectRows}
+          />
         </table>
       </div>
       <button
